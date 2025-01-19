@@ -20,6 +20,7 @@
         <junit.platform.ver>1.11.4</junit.platform.ver>
         <surefirePlugin.ver>3.5.2</surefirePlugin.ver>
         <compilerPlugin.ver>3.13.0</compilerPlugin.ver>
+        <maven.checkstyle.ver>3.6.0</maven.checkstyle.ver>
     </properties>
 
     <dependencies>
@@ -45,7 +46,6 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>${assertj.ver}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -103,6 +103,15 @@
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven.checkstyle.ver}</version>
+                <configuration>
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                    <configLocation>${project.build.sourceDirectory}/../resources/checkstyle.xml</configLocation>
                 </configuration>
             </plugin>
         </plugins>
