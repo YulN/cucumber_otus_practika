@@ -9,7 +9,7 @@ import otus.factory.settings.ChromeSettings;
 
 public class WebDriverFactory {
 
-    private String browserName = System.getProperty("browser.name");
+    private final String browserName = System.getProperty("browser.name", "chrome");
 
     public WebDriver create() {
         switch (browserName) {

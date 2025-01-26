@@ -19,7 +19,7 @@ public abstract class AbsBasePage extends AbsCommon {
     @FindBy(css = "h1")
     private WebElement header;
 
-    private String baseUrl = System.getProperty("baseUrl", "https://otus.ru");
+    private final String baseUrl = System.getProperty("baseUrl", "https://otus.ru");
 
     public void open(String path) {
         driver.get(baseUrl + path);

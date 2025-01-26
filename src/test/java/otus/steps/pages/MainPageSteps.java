@@ -11,6 +11,6 @@ public class MainPageSteps {
 
     @Пусть("Открываем главную страницу")
     public void openMainPage() {
-        mainPage.open("/");
+        mainPage.open("/catalog/courses");
     }
 }
